@@ -38,7 +38,10 @@ def main():
 
             if user_input == 1:
                 while True:
-                    input_video_url = str(input("Enter video url (or 0 to cancel): ")).strip()
+                    print("+-" + "—" * 32 + "-+")
+                    print("│ Enter video url (or 0 to cancel) │")
+                    print("+-" + "—" * 32 + "-+")
+                    input_video_url = str(input(">> ")).strip()
                     if is_valid_youtube_url(input_video_url):
                         download_video(input_video_url)
                     elif input_video_url == "0":
@@ -48,7 +51,10 @@ def main():
 
             elif user_input == 2:
                 while True:
-                    input_audio_url = str(input("Enter audio url (or 0 to cancel): ")).strip()
+                    print("+-" + "—" * 32 + "-+")
+                    print("│ Enter audio url (or 0 to cancel) │")
+                    print("+-" + "—" * 32 + "-+")
+                    input_audio_url = str(input(">> ")).strip()
                     if is_valid_youtube_url(input_audio_url):
                         download_audio(input_audio_url)
                     elif input_audio_url == "0":
