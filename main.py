@@ -6,7 +6,7 @@ import re
 import sys
 import shutil  
 
-def is_valid_youtube_url(url: str) -> bool:
+def is_valid_youtube_url(url):
     if not url:
         return False
     pattern = re.compile(
@@ -36,23 +36,23 @@ def main():
 
             if user_input == 1:
                 while True:
-                    input_video_url = str(input("Enter video url (or 0 to cancel): "))
+                    input_video_url = str(input("Enter video url (or 0 to cancel): ")).strip()
                     if is_valid_youtube_url(input_video_url):
                         download_video(input_video_url)
                     elif input_video_url == "0":
                         break
                     else:
-                        print_error("Invalid youtube url")
+                        print_error(f"'{input_video_url}' Is invalid youtube url")
 
             elif user_input == 2:
                 while True:
-                    input_audio_url = str(input("Enter audio url (or 0 to cancel): ")) 
+                    input_audio_url = str(input("Enter audio url (or 0 to cancel): ")).strip()
                     if is_valid_youtube_url(input_audio_url):
                         download_audio(input_audio_url)
                     elif input_audio_url == "0":
                         break
                     else:
-                        print_error("Invalid youtube url")
+                        print_error(f"'{input_audio_url}' Is invalid youtube url")
                     
             elif user_input == 3:
                 print("Exiting...")
