@@ -28,9 +28,11 @@ def main():
         sys.exit(127)
     
     while True:
-        print("1. Video")
-        print("2. Audio")
-        print("3. Exit")
+        print("+-" + "—" * 15 + "-+")
+        print("│ 1. Video        │")
+        print("│ 2. Audio        │")
+        print("│ 3. Exit         │")
+        print("+-" + "-" * 15 + "-+")
         try:
             user_input = int(input("Select download method: "))
 
