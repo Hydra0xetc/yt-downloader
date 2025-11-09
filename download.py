@@ -35,11 +35,15 @@ def get_info(url):
     if error:
         print_error(error)
         return None
-    
+
+    if stdout is None:
+        print_error("No output received from yt-dlp")
+        return None
+
     try:
         return json.loads(stdout)
     except json.JSONDecodeError as e:
-        print_error(f"Error parsing JSON: {e}")
+        print_error(e)
         return None
 
 def display_width(text):
@@ -124,12 +128,14 @@ def get_best_formats(formats, extensions, is_audio=False):
         if not ext or ext not in extensions or not has_content:
             continue
         
+
+        abr = fmt.get('abr', 0)
+        height = fmt.get('height', 0)
+
         # Create grouping key
         if is_audio:
-            abr = fmt.get('abr', 0)
             key = f"{int(abr)}kbps_{ext}_{fmt.get('acodec', '')[:10]}"
         else:
-            height = fmt.get('height', 0)
             key = f"{height}p_{ext}_{fmt.get('vcodec', '')[:10]}"
         
         if key not in format_groups:
