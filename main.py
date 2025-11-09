@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
-from log import print_error
+import os
+from log import print_error, print_red, print_yellow, show_logo
 from download import download_video, download_audio
 import re
 import sys
@@ -27,43 +28,54 @@ def main():
         print_error("yt-dlp not found, install it firts with: pip install yt-dlp")
         sys.exit(127)
     
+    os.system("clear")
+    show_logo()
+    print("Version: 1.1.0") # version
     while True:
-        print("+-" + "—" * 15 + "-+")
-        print("│ 1. Video        │")
-        print("│ 2. Audio        │")
-        print("│ 3. Exit         │")
-        print("+-" + "-" * 15 + "-+")
+        print("╭" + "─" * 30 + "╮")
+        print("│ 1. Video                     │")
+        print("│ 2. Audio                     │")
+        print("│ 3. Exit                      │")
+        print("╰" + "─" * 30 + "╯")
         try:
             user_input = int(input("Select download method: "))
 
             if user_input == 1:
+                os.system("clear")
+                show_logo()
                 while True:
-                    print("+-" + "—" * 32 + "-+")
-                    print("│ Enter video url (or 0 to cancel) │")
-                    print("+-" + "—" * 32 + "-+")
-                    input_video_url = str(input(">> ")).strip()
+                    print("╭" + "─" * 34 + "╮")
+                    print("│ Enter video url or 0 to cancel   │")
+                    print("╰" + "─" * 34 + "╯")
+                    input_video_url = str(input("Enter The Url: ")).strip()
                     if is_valid_youtube_url(input_video_url):
                         download_video(input_video_url)
                     elif input_video_url == "0":
+                        os.system("clear")
+                        show_logo()
                         break
                     else:
-                        print_error(f"'{input_video_url}' Is invalid youtube url")
+                        print_error(f"'{input_video_url}' Is not a valid youtube url")
 
             elif user_input == 2:
+                os.system("clear")
+                show_logo()
                 while True:
-                    print("+-" + "—" * 32 + "-+")
-                    print("│ Enter audio url (or 0 to cancel) │")
-                    print("+-" + "—" * 32 + "-+")
-                    input_audio_url = str(input(">> ")).strip()
+                    print("╭" + "─" * 34 + "╮")
+                    print("│ Enter audio url or 0 to cancel   │")
+                    print("╰" + "─" * 34 + "╯")
+                    input_audio_url = str(input("Enter The Url: ")).strip()
                     if is_valid_youtube_url(input_audio_url):
                         download_audio(input_audio_url)
                     elif input_audio_url == "0":
+                        os.system("clear")
+                        show_logo()
                         break
                     else:
-                        print_error(f"'{input_audio_url}' Is invalid youtube url")
+                        print_error(f"'{input_audio_url}' Is not a valid youtube url")
                     
             elif user_input == 3:
-                print("Exiting...")
+                print_red("Exiting...")
                 sys.exit(0)
             else:
                 print_error("Invalid option")
@@ -71,7 +83,7 @@ def main():
         except ValueError:
             print_error("Invalid Input")
         except KeyboardInterrupt:
-            print("Exiting...")
+            print_yellow("Exiting...")
             sys.exit(0)
 
 if __name__ == "__main__":

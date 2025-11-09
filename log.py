@@ -71,16 +71,49 @@ def print_success(message: Any) -> None:
     print(f"{GREEN}{BOLD}[SUCCESS] {RESET}{message}")
 
 def print_red(message: Any) -> None:
+    """Prints a colored red message to stdout.
+
+    Args:
+        message: The variable to be included in the red message.
+    """
     print(f"{RED}{BOLD}{message}{RESET}")
 
 def print_green(message: Any) -> None:
+    """Prints a colored green message to stdout.
+
+    Args:
+        message: The variable to be included in the green message.
+    """
     print(f"{GREEN}{BOLD}{message}{RESET}")
 
 def print_yellow(message: Any) -> None:
+    """Prints a colored yellow message to stdout.
+
+    Args:
+        message: The variable to be included in the yellow message.
+    """
     print(f"{YELLOW}{BOLD}{message}{RESET}")
 
 def print_cyan(message: Any) -> None:
+    """Prints a colored cyan message to stdout.
+
+    Args:
+        message: The variable to be included in the cyan message.
+    """
     print(f"{CYAN}{BOLD}{message}{RESET}")
 
 def print_magenta(message: Any) -> None:
+    """Prints a colored magenta message to stdout.
+
+    Args:
+        message: The variable to be included in the magenta message.
+    """
     print(f"{MAGENTA}{BOLD}{message}{RESET}")
+
+def show_logo():
+    logo = """
+░█░█░▀█▀░█▀▄░█▀█░█░█░█▀█░█░░░█▀█░█▀█░█▀▄░█▀▀░█▀▄
+░░█░░░█░░█░█░█░█░█▄█░█░█░█░░░█░█░█▀█░█░█░█▀▀░█▀▄
+░░▀░░░▀░░▀▀░░▀▀▀░▀░▀░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀░░▀▀▀░▀░▀
+    """
+    print_green(logo)
