@@ -19,20 +19,18 @@ A simple, command-line tool to download videos and audio from YouTube.
 
 1.  Clone the repository:
     ```bash
-    git clone https://github.com/Hydra0xetc/yt-downloader.git
+    git clone https://github.com/Hydra0xetc/YtDownloader.git
     ```
 
 2.  Navigate to the project directory:
     ```bash
-    cd yt-downloader/python
+    cd YtDownloader/python
     ```
 
 3.  Install the required Python packages:
     ```bash
     pip install -r requirements.txt
     ```
-    This will install `yt-dlp` and `wcwidth`.
-
 ## Usage
 
 1.  Run the main script from within the `python` directory:
