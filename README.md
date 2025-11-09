@@ -1,11 +1,5 @@
 # YtDownloader
 
-<pre>
-░█░█░▀█▀░█▀▄░█▀█░█░█░█▀█░█░░░█▀█░█▀█░█▀▄░█▀▀░█▀▄
-░░█░░░█░░█░█░█░█░█▄█░█░█░█░░░█░█░█▀█░█░█░█▀▀░█▀▄
-░░▀░░░▀░░▀▀░░▀▀▀░▀░▀░▀░▀░▀▀▀░▀▀▀░▀░▀░▀▀░░▀▀▀░▀░▀
-</pre>
-
 A simple, command-line tool to download videos and audio from YouTube.
 
 ## Features
