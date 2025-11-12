@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import os
-from log import print_error, print_red, print_yellow, show_logo
+from log import print_error, print_red, show_logo
 from download import download_video, download_audio
 import re
 import sys
@@ -92,7 +92,7 @@ def main():
         except ValueError:
             print_error("Invalid Input")
         except KeyboardInterrupt:
-            print_yellow("Exiting...")
+            print_red("Exiting...")
             sys.exit(0)
 
 if __name__ == "__main__":
