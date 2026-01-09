@@ -9,7 +9,7 @@ import shutil
 from config import load_config, ensure_download_path_exists
 
 def clear_screen():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    os.system("clear")
 
 def is_valid_youtube_url(url):
     if not url:
@@ -39,7 +39,7 @@ def main():
 
     clear_screen()
     show_logo()
-    print("Version: 1.1.0") # version
+    print("Version: 1.1.1") # version
     while True:
         print("╭" + "─" * 30 + "╮")
         print("│ 1. Video                     │")

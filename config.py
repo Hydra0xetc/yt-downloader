@@ -2,7 +2,7 @@ import json
 import os
 from log import print_error, print_warning
 
-CONFIG_FILE = "config.json"
+CONFIG_FILE = os.path.expanduser("~/.config/YtDownloader/config.json")
 
 DEFAULT_CONFIG = {
     "video": {
@@ -45,8 +45,10 @@ def load_config():
 
 def save_config(config_data):
     try:
+        os.makedirs(os.path.dirname(CONFIG_FILE), exist_ok=True)
         with open(CONFIG_FILE, 'w') as f:
-            json.dump(config_data, f, indent=2)
+            json.dump(config_data, f, indent=4)
+
     except Exception as e:
         print_error(f"Error saving {CONFIG_FILE}: {e}")
 
